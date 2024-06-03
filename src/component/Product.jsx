@@ -7,6 +7,8 @@ import Product4 from "../assets/Homepage/product4.png";
 import Product5 from "../assets/Homepage/product5.png";
 import Product6 from "../assets/Homepage/product6.png";
 import Product7 from "../assets/Homepage/product7.png";
+import Items from './Shopping/item';
+import { BrowserRouter as Route, Routes, Link } from 'react-router-dom';
 
 const Product = () => {
   return (
@@ -20,7 +22,6 @@ const Product = () => {
         {/*Card 1*/}
         <div className="card-container box-1">
           <div>
-
             <div>
               <img src={Product1} alt="card-1" />
               <h3>Graphic Design</h3>
@@ -121,16 +122,18 @@ const Product = () => {
           </div>
 
           {/*Card 4*/}
-          <div className="card-container">
-            <div>
-              <img src={Product6} alt="card-1" />
-              <h3>Graphic Design</h3>
-              <h5>English Department</h5>
-              <p>
-                $16.48<span>$6.48</span>
-              </p>
+          <Link to="/item">
+            <div className="card-container">
+              <div>
+                <img src={Product6} alt="card-1" />
+                <h3>Graphic Design</h3>
+                <h5>English Department</h5>
+                <p>
+                  $16.48<span>$6.48</span>
+                </p>
+              </div>
             </div>
-          </div>
+          </Link>
 
           {/*Card 5*/}
           <div className="card-container">
@@ -146,6 +149,9 @@ const Product = () => {
         </div>
         <button className="product-btn">LOAD MORE PRODUCTS</button>
       </div>
+      <Routes>
+        <Route path='/item' element={<Items />} />
+      </Routes>
     </div>
   );
 }

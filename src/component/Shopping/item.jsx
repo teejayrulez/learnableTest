@@ -14,6 +14,9 @@ import Beta from "../../assets/Shoppage/carousel-inner.png";
 import Navbar from "../../Reusables/Navbar";
 import Allproducts from "../../Reusables/Allproducts";
 import Footer from "../../Reusables/Footer";
+import { BrowserRouter as Route, Routes, Link } from "react-router-dom";
+import Cart from "./Cart"
+
 
 
 const Items = () => {
@@ -61,7 +64,9 @@ const Items = () => {
             <button className="item-btn">Select Options</button>
             <div>
               <FontAwesomeIcon className="item-like" icon={faHeart} />
-              <FontAwesomeIcon className="item-cart" icon={faShoppingCart} />
+              <Link to='/cart'>
+                <FontAwesomeIcon className="item-cart" icon={faShoppingCart} />
+              </Link>
               <FontAwesomeIcon className="item-show" icon={faEye} />
             </div>
           </div>
@@ -111,6 +116,10 @@ const Items = () => {
       </div>
       <Allproducts />
       <Footer />
+
+      <Routes>
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
     </div>
   );
 }
