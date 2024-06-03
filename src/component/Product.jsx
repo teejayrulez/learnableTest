@@ -8,7 +8,6 @@ import Product5 from "../assets/Homepage/product5.png";
 import Product6 from "../assets/Homepage/product6.png";
 import Product7 from "../assets/Homepage/product7.png";
 import Items from './Shopping/item';
-import { BrowserRouter as Route, Routes, Link } from 'react-router-dom';
 
 const Product = () => {
   return (
@@ -122,7 +121,6 @@ const Product = () => {
           </div>
 
           {/*Card 4*/}
-          <Link to="/item">
             <div className="card-container">
               <div>
                 <img src={Product6} alt="card-1" />
@@ -133,7 +131,6 @@ const Product = () => {
                 </p>
               </div>
             </div>
-          </Link>
 
           {/*Card 5*/}
           <div className="card-container">
@@ -149,9 +146,6 @@ const Product = () => {
         </div>
         <button className="product-btn">LOAD MORE PRODUCTS</button>
       </div>
-      <Routes>
-        <Route path='/item' element={<Items />} />
-      </Routes>
     </div>
   );
 }
